@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nelson's Portfolio | Featured Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio showcase for bug.png project.">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Showcase</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1 class="reveal-text">Capture & Debug</h1>
+            <p class="reveal-text delay-1">A detailed look at the `bug.png` asset in high-fidelity.</p>
+        </header>
+
+        <section class="image-showcase">
+            <div class="image-wrapper reveal-up">
+                <img src="bug.png" alt="Bug Project Screenshot" id="featured-image">
+                <div class="image-overlay"></div>
+            </div>
+            
+            <div class="image-meta reveal-up delay-2">
+                <div class="meta-item">
+                    <span>Project</span>
+                    <strong>Bug Visualizer</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Type</span>
+                    <strong>Static Asset</strong>
+                </div>
+                <div class="meta-item">
+                    <span>Role</span>
+                    <strong>Lead Designer</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nelson Portfolio. Construit for Midain Studios application.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple reveal animation observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-text, .reveal-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
